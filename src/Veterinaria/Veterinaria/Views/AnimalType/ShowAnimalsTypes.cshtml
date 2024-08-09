@@ -1,0 +1,42 @@
+﻿@model List<AnimalTypeModel>
+
+@{
+    ViewData["Title"] = "ShowAnimalsTypes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Tipos de animales
+    </div>
+    <div class="card-body">
+        <a asp-action="SaveAnimalType" asp-controller="AnimalType" class="btn btn-success">Crear nuevo</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.TipNombre</td>
+                        <td>@item.TipDescripcion</td>
+                        <td>
+                            <a asp-action="UpdateAnimalType" asp-controller="AnimalType" class="btn btn-primary btn-sm" asp-route-idUpdateType="@item.TipId">Editar</a>
+                            
+                        </td>
+                        <td>
+                            <a asp-action="DeleteAnimalType" asp-controller="AnimalType" class="btn btn-danger btn-sm" asp-route-idDeleteType="@item.TipId">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

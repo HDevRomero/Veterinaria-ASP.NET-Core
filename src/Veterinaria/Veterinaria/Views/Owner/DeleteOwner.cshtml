@@ -1,0 +1,23 @@
+﻿@model OwnerModel
+@{
+    ViewData["Title"] = "DeleteOwner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar propietario
+    </div>
+    <div class="card-body">
+        <form asp-action="DeleteOwner" asp-controller="Owner" method="post">
+            <input asp-for="ProDocumento" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar al propietario: @Html.DisplayTextFor(m => m.ProNombre)?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="ShowOwners" asp-controller="Owner" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

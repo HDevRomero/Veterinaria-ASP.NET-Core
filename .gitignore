@@ -1,0 +1,104 @@
+# Archivos específicos de Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos generados automáticamente
+Generated\_Files/
+Generated\_Sources/
+Generated\_Code/
+Generated\_Data/
+
+# Directorios de compilación
+bin/
+obj/
+Debug/
+Release/
+
+# Paquetes NuGet
+*.nupkg
+*.snupkg
+packages/
+packages.config
+*.symbols.nupkg
+
+# Archivos específicos de Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archivos específicos de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de registros (logs)
+*.log
+
+# Archivos de bases de datos
+*.mdf
+*.ldf
+
+# Archivos de fallos y volcados de memoria
+*.dmp
+
+# Archivos de respaldo y temporales
+*.bak
+*.swp
+*.swo
+*.orig
+*.tmp
+
+# Resultados de pruebas
+TestResults/
+*.trx
+*.coverage
+*.testsettings
+*.vsmdi
+
+# JetBrains Rider / IntelliJ IDEA
+.idea/
+*.sln.iml
+*.sln.iws
+
+# Otros archivos específicos de IDEs
+*.sln.ide.local
+*.sln.ide.user
+
+# Dependencias de Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Archivos específicos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos específicos de Java
+*.class
+*.jar
+
+# Ignorar archivos de proyectos de IDEs
+.project
+.classpath
+
+# Evitar cometer información sensible
+*.config
+*.secret
+*.env
+.env.*
+
+# DLLs y ejecutables compilados
+*.dll
+*.exe
+
+# JavaScript compilado no utilizado
+*.min.js
+
+# Ignorar configuración del entorno local
+*.env.local

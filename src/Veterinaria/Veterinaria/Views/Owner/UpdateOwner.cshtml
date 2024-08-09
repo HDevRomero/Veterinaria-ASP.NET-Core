@@ -1,0 +1,50 @@
+﻿@model OwnerModel
+@{
+    ViewData["Title"] = "UpdateOwner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar propietario
+    </div>
+    <div class="card-body">
+        <form asp-action="UpdateOwner" asp-controller="Owner" method="post">
+            <input asp-for="ProDocumento" type="hidden" class="form-control">
+
+
+            <div class="mb-3">
+                <label class="form-label">Documento de identidad</label>
+                <input asp-for="ProDocumento" type="text" class="form-control" readonly>
+                @* <span asp-validation-for="TipNombre" class="text-danger"></span> *@                
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="ProNombre" type="text" class="form-control">
+                @* <span asp-validation-for="TipNombre" class="text-danger"></span> *@
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input asp-for="ProApellido" type="text" class="form-control">
+                @* <span asp-validation-for="TipDescripcion" class="text-danger"></span> *@
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Telefono</label>
+                <input asp-for="ProTelefono" type="text" class="form-control">
+                @* <span asp-validation-for="TipDescripcion" class="text-danger"></span> *@
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Direccion</label>
+                <input asp-for="ProDireccion" type="text" class="form-control">
+                @* <span asp-validation-for="TipDescripcion" class="text-danger"></span> *@
+            </div>
+
+            <button type="submit" class="btn btn-success">Editar propietario</button>
+            <a asp-action="ShowOwners" asp-controller="Owner" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

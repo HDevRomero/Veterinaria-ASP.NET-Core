@@ -1,0 +1,32 @@
+﻿@model AnimalTypeModel
+@{
+    ViewData["Title"] = "UpdateAnimalType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Editar Tipo
+    </div>
+    <div class="card-body">
+        <form asp-action="UpdateAnimalType" asp-controller="AnimalType" method="post">
+
+            <input asp-for="TipId" type="hidden" class="form-control">
+
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="TipNombre" type="text" class="form-control">
+                <span asp-validation-for="TipNombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <input asp-for="TipDescripcion" type="text" class="form-control">
+                <span asp-validation-for="TipDescripcion" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-success">Editar tipo</button>
+            <a asp-action="ShowAnimalsTypes" asp-controller="AnimalType" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

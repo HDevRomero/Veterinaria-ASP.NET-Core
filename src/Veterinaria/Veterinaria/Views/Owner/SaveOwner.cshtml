@@ -1,0 +1,49 @@
+﻿@model OwnerModel
+@{
+    ViewData["Title"] = "SaveOwner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Crear nuevo propietario
+    </div>
+    <div class="card-body">
+        <form asp-action="SaveOwner" asp-controller="Owner" method="post">
+
+            <div class="mb-3">
+                <label class="form-label">Documento de identidad</label>
+                <input asp-for="ProDocumento" type="text" class="form-control">
+                @* <span asp-validation-for="TipNombre" class="text-danger"></span> *@
+            </div>        
+
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input asp-for="ProNombre" type="text" class="form-control">
+                @* <span asp-validation-for="TipNombre" class="text-danger"></span> *@
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input asp-for="ProApellido" type="text" class="form-control">
+                @* <span asp-validation-for="TipDescripcion" class="text-danger"></span> *@
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Telefono</label>
+                <input asp-for="ProTelefono" type="text" class="form-control">
+                @* <span asp-validation-for="TipDescripcion" class="text-danger"></span> *@
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input asp-for="ProDireccion" type="text" class="form-control">
+                @*<span asp-validation-for="TipDescripcion" class="text-danger"></span> *@
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar propietario</button>
+            <a asp-action="ShowOwners" asp-controller="Owner" class="btn btn-warning">Ver propietarios</a>
+        </form>
+
+    </div>
+</div>

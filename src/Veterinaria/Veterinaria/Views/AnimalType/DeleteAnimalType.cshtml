@@ -1,0 +1,23 @@
+﻿@model AnimalTypeModel
+@{
+    ViewData["Title"] = "DeleteAnimalType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar tipo de animal
+    </div>
+    <div class="card-body">
+        <form asp-action="DeleteAnimalType" asp-controller="AnimalType" method="post">
+            <input asp-for="TipId" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el tipo: @Html.DisplayTextFor(m => m.TipNombre)?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a asp-action="ShowAnimalsTypes" asp-controller="AnimalType" class="btn btn-warning">Volver a la lista</a>
+        </form>
+    </div>
+</div>

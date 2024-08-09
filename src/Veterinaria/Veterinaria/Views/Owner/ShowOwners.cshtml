@@ -1,0 +1,50 @@
+﻿@model List<OwnerModel>
+@{
+    ViewData["Title"] = "ShowOwners";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Propietarios
+    </div>
+    <div class="card-body">
+        <a asp-action="SaveOwner" asp-controller="Owner" class="btn btn-success">Crear nuevo propietario</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ProDocumento</td>
+                        <td>@item.ProNombre</td>
+                        <td>@item.ProApellido</td>
+                        <td>@item.ProTelefono</td>
+                        <td>@item.ProDireccion</td>
+                        <td></td>
+
+                        @*BOTÓN DE ACTUALIZAR*@
+                         <td>
+                            <a asp-action="UpdateOwner" asp-controller="Owner" class="btn btn-primary btn-sm" asp-route-idUpdateOwner="@item.ProDocumento">Editar</a>
+                        </td>
+
+                        @*BOTÓN DE ELIMINAR*@
+                        <td>
+                            <a asp-action="DeleteOwner" asp-controller="Owner" class="btn btn-danger btn-sm" asp-route-idDeleteOwner="@item.ProDocumento">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
